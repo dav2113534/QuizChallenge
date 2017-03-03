@@ -61,5 +61,14 @@ $(document).ready(function () {
                     };
 
                     var questions = {
-                        1: "Who is the host of Comedy Bang Bang?"
-                    }
+                        1: "Who is the host of Comedy Bang Bang?",
+                        2: "What was the original name of the podcast",
+                        3: "Which guest has the most appearences on the podcast?",
+                        4: "",
+                        5: "What year did comedy bang bang start?",
+                        6: "What is the famous catch phrase of the show?",
+                        7: "who voices Scotts dad",
+                        8: "Scotts alter ego is?",
+                        9: "Who is banned from the podcast?",
+                        10: "What is the last feature of each podcast?",
+                    };
