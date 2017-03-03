@@ -7,4 +7,35 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
+    margin: auto;
+}
+
+img {
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+button {
+    position: relative;
+    display: inline-block;
+    width: 90px;
+    height: 30px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#form {
+    display: inline-block;
+}
+
+p {
+    display: inline-block;
+}
+
+body {
+    min-height: 645px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: black;
 }
