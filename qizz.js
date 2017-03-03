@@ -18,4 +18,48 @@ $(document).ready(function () {
                         } else {
                             return false;
                         };
+                    }); $('#next').click(function () {
+                        if ($('.post-text').text() == '' && $('#submit:active')) {
+                            return false;
+                        };
+                        i += 1;
+                        $('.questionNum').text(i);
+                        askQ(i);
+                        $('#submit:submit').removeAttr("disabled");
+                        $('input:checked').prop('checked', false);
+                        if (i == 10) {
+                            $('#next').hide();
+                            $('#reset').show();
+                            return false;
+                        };
+                    }); $('#reset').click(function () {
+                        location.reload();
                     });
+
+                    function askQ(i) {
+                        $('.post-text').text('');
+                        $('.questiontitle').text(questions[i]);
+                        $('#choice1').text(choice1[i]);
+                        $('#choice2').text(choice2[i]);
+                        $('#choice3').text(choice3[i]);
+                        $('.#choice4').text(chocie4[i]);
+                    };
+
+                    function checkAns(u) {
+                        y.siblings('.post-text').removeClass('correct-ans wrong-ans');
+                        if (y.val() == answers[i]) {
+                            y.siblings('.post-text').addClass('correct-ans').text('correct!');
+                            correctCount += 1;
+                            $('.correct').text(correctCount);
+                        } else {
+                            y.sibling('.post-text').addClass('wrong-ans').text('wrong. see #' + answers[i]);
+                            wrongCount += 1;
+                            $('.wrong').text(wrongCount);
+                        };
+                        $('#submit:submit').attr("disabled", true);
+                        event.preventDefault();
+                    };
+
+                    var questions = {
+                        1: "Who is the host of Comedy Bang Bang?"
+                    }
