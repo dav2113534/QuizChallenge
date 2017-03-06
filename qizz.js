@@ -92,6 +92,7 @@
        $('#reset').hide();
        askQ(1);
    }
+   
    $(document).ready(function () {
        reset();
        var i = 1;
@@ -108,6 +109,7 @@
                return false;
            };
        });
+
        $('#next').click(function () {
            if ($('.post-text').text() == '' && $('#submit:active')) {
                return false;
