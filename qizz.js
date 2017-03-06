@@ -101,32 +101,39 @@
        var correctCount = parseInt($('.correct').html());
        var wrongCount = parseInt($('.wrong').html());
 
+
        $('#begin').click(startQuiz);
 
-       $('#submit').click(function () {
-           var y = $('input:checked');
-           if (y.length === 1) {
-               checkAns(y);
-           } else {
-               return false;
-           };
-       });
+              function submit() {
+           $('#submit').click(function () {
+               var y = $('input:checked');
+               if (y.length === 1) {
+                   checkAns(y);
+               } else {
+                   return false;
+               };
+           });
+       }
 
-       $('#next').click(function () {
-           if ($('.post-text').text() == '' && $('#submit:active')) {
-               return false;
-           };
-           i += 1;
-           $('.questionNum').text(i);
-           askQ(i);
-           $('#submit:submit').removeAttr("disabled");
-           $('input:checked').prop('checked', false);
-           if (i == 10) {
-               $('#next').hide();
-               $('#reset').show();
-               return false;
-           };
-       });
+       submit();
+
+            function next() {
+          $('#next').click(function () {
+              if ($('.post-text').text() == '' && $('#submit:active')) {
+                  return false;
+              };
+              i += 1;
+              $('.questionNum').text(i);
+              askQ(i);
+              $('#submit:submit').removeAttr("disabled");
+              $('input:checked').prop('checked', false);
+              if (i == 10) {
+                  $('#next').hide();
+                  $('#reset').show();
+                  return false;
+              };
+          });
+      }
        $('#reset').click(function () {
            location.reload();
        });
@@ -144,7 +151,7 @@
                wrongCount += 1;
                $('.wrong').text(wrongCount);
            };
-           $('#submit:submit').attr("disabled", true);
+           $('#submit:submit').attr('disabled', true);
            event.preventDefault();
        };
    })
