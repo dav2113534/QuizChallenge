@@ -72,7 +72,7 @@
 
    function askQ(i) {
        $('.post-text').text('');
-       $('.questiontitle').text(questions[i]);
+       $('.questionTitle').text(questions[i]);
        $('#choice1').text(choice1[i]);
        $('#choice2').text(choice2[i]);
        $('#choice3').text(choice3[i]);
@@ -92,7 +92,9 @@
        $('#reset').hide();
        askQ(1);
    }
-   
+
+
+
    $(document).ready(function () {
        reset();
        var i = 1;
@@ -131,7 +133,7 @@
 
 
 
-       function checkAns(u) {
+       function checkAns(y) {
            y.siblings('.post-text').removeClass('correct-ans wrong-ans');
            if (y.val() == answers[i]) {
                y.siblings('.post-text').addClass('correct-ans').text('correct!');
